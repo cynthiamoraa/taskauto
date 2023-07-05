@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-
+const mongoose = require("mongoose");
 const app = express();
 
 
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post("/", (req, res) => {
-  const {  phoneNumber, text } = req.body;
+  const { sessionId, phoneNumber, text } = req.body;
 
   console.log("wwwwwww");
   
@@ -89,7 +89,10 @@ function sendsms(selectedSlotValue) {
   const AfricasTalking = require("africastalking")(credentials);
   const sms = AfricasTalking.SMS;
 
- 
+  // Set the phone number you want to send the SMS to
+//   const phoneNumber = "+1234567890"; // Replace with the recipient's phone number
+
+  // Compose the message content with the selected slot
 
   const message = `Your appointment has been booked for ${selectedSlotValue}`;
 
@@ -124,27 +127,27 @@ function sendsms(selectedSlotValue) {
     const voice = AfricasTalkings.VOICE;
 
     function makeCall(phoneNumber1) {
-     
+      //  const { sessionId, phoneNumber, text } = req.body;
 
       const options = {
-       
+        // Set your Africa's Talking phone number in international format
         callFrom: "+254730731029",
-        
+        // Set the numbers you want to call to in a comma-separated list
         callTo: [phoneNumber1],
       };
-     
+      //"+254794940160"
+      // Make the call
       console.log("calling");
       voice.call(options).then(console.log).catch(console.log);
     }
 
-    makeCall(phoneNumber); 
+    makeCall(phoneNumber); // logs "Hello from project1!"
 
     response = `END you will receive a call shortly `;
   } 
 
   // Print the response onto the page so that our gateway can read it
   res.set("Content-Type: text/plain");
-  
   res.send(response);
 });
 
@@ -152,5 +155,5 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-
+module.exports = app;
 

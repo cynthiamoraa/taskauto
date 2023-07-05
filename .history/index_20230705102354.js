@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post("/", (req, res) => {
-  const {  phoneNumber, text } = req.body;
+  const { sessionId, phoneNumber, text } = req.body;
 
   console.log("wwwwwww");
   
@@ -132,19 +132,19 @@ function sendsms(selectedSlotValue) {
         
         callTo: [phoneNumber1],
       };
-     
+      //"+254794940160"
+      // Make the call
       console.log("calling");
       voice.call(options).then(console.log).catch(console.log);
     }
 
-    makeCall(phoneNumber); 
+    makeCall(phoneNumber); // logs "Hello from project1!"
 
     response = `END you will receive a call shortly `;
   } 
 
   // Print the response onto the page so that our gateway can read it
   res.set("Content-Type: text/plain");
-  
   res.send(response);
 });
 
@@ -152,5 +152,5 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-
+// module.exports = app;
 

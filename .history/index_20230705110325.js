@@ -144,7 +144,6 @@ function sendsms(selectedSlotValue) {
 
   // Print the response onto the page so that our gateway can read it
   res.set("Content-Type: text/plain");
-  
   res.send(response);
 });
 

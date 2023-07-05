@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post("/", (req, res) => {
-  const {  phoneNumber, text } = req.body;
+  const { sessionId, phoneNumber, text } = req.body;
 
   console.log("wwwwwww");
   
@@ -144,7 +144,6 @@ function sendsms(selectedSlotValue) {
 
   // Print the response onto the page so that our gateway can read it
   res.set("Content-Type: text/plain");
-  
   res.send(response);
 });
 
