@@ -8,8 +8,8 @@ const app = express();
 const PORT = 8000;
 
 const credentials = {
-  apiKey: "##",
-   username: "##",
+  apiKey: "c0cb33c561019e12e552b9b2e5b266fd8cbf3690b8739846e57d18edd939dd21",
+  username: "FGM23",
 };
 const AfricasTalking = require("africastalking")(credentials);
 const sms = AfricasTalking.SMS;
@@ -83,7 +83,7 @@ else if (text.startsWith("1*1*")) {
 
 function sendsms(selectedSlotValue) {
 //   const credentials = {
-//     apiKey: "##",
+//     apiKey: "c0cb33c561019e12e552b9b2e5b266fd8cbf3690b8739846e57d18edd939dd21",
 //     username: "##",
 //   };
   const AfricasTalking = require("africastalking")(credentials);
@@ -113,8 +113,8 @@ function sendsms(selectedSlotValue) {
     console.log("wwwwwww");
     const credentialss = {
       apiKey:
-        "##",
-      username: "###",
+        "2ac340bb0eee0916e8dee724caa5739381e8c17c20cf7f3e50accb0c2bf48ebd",
+      username: "edaktari",
     };
 
     // Initialize the SDK

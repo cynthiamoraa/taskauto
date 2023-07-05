@@ -113,8 +113,8 @@ function sendsms(selectedSlotValue) {
     console.log("wwwwwww");
     const credentialss = {
       apiKey:
-        "##",
-      username: "###",
+        "2ac340bb0eee0916e8dee724caa5739381e8c17c20cf7f3e50accb0c2bf48ebd",
+      username: "edaktari",
     };
 
     // Initialize the SDK
